@@ -40,10 +40,10 @@ a:focus-visible,button:focus-visible{outline:3px solid #c47755;outline-offset:4p
 .main-nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-8px;height:1px;background:var(--gold);transition:right .2s ease}
 .main-nav a:hover::after{right:0}
 .top-actions{justify-self:end;display:flex;align-items:center;height:100%}
-.appointment-shortcut{align-self:center;width:150px;height:52px;padding:0 18px;border-radius:999px;background:var(--forest);color:white;text-decoration:none;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:11px;box-shadow:0 10px 24px rgba(23,53,38,.14);transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease}
+.appointment-shortcut{align-self:center;width:140px;height:52px;padding:0 18px;border-radius:999px;background:var(--forest);color:white;text-decoration:none;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:11px;box-shadow:0 10px 24px rgba(23,53,38,.14);transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease}
 .appointment-shortcut:hover{transform:translateY(-2px);background:var(--forest-dark);box-shadow:0 15px 30px rgba(23,53,38,.2)}
 .appointment-shortcut svg{order:2;width:21px;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
-.appointment-shortcut span{font-size:14px;font-weight:600;letter-spacing:.055em;text-transform:uppercase}
+.appointment-shortcut span{font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase}
 .menu-toggle{display:none;background:none;border:0;color:var(--forest)}
 
 .hero{min-height:720px;height:calc(100vh - 130px);max-height:900px;position:relative;overflow:hidden;display:grid;grid-template-columns:32% 42% 26%;align-items:center;padding:0 clamp(24px,4vw,76px);background:transparent}
@@ -51,9 +51,9 @@ a:focus-visible,button:focus-visible{outline:3px solid #c47755;outline-offset:4p
 .hero-copy{position:relative;z-index:5;align-self:center;padding-left:clamp(20px,3.1vw,60px);margin-top:-28px}
 .eyebrow{margin:0 0 18px;color:var(--forest);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
 .eyebrow::before{content:"";display:inline-block;width:8px;height:8px;margin-right:10px;border:1px solid var(--gold);border-radius:50%}
-h1{margin:0 0 28px;color:var(--forest);font:500 clamp(56px,5vw,88px)/.9 var(--serif);letter-spacing:-.045em}
-h1 em{font-weight:400;color:#9f743d}
-.outline-button{display:inline-flex;align-items:center;justify-content:center;min-width:180px;height:48px;padding:0 24px;border:1px solid var(--forest);border-radius:999px;color:var(--forest);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:.2s ease}
+h1{margin:0 0 28px;color:var(--forest);font:500 clamp(52px,4.65vw,82px)/.9 var(--sans);letter-spacing:-.065em}
+h1 em{font-family:var(--serif);font-size:1.08em;font-weight:400;font-style:italic;letter-spacing:-.035em;color:#9f743d}
+.outline-button{display:inline-flex;align-items:center;justify-content:center;min-width:170px;height:46px;padding:0 24px;border:1px solid var(--forest);border-radius:999px;color:var(--forest);font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;transition:.2s ease}
 .outline-button:hover{background:var(--forest);color:white}
 
 .portrait-stage{position:absolute;left:50%;right:auto;width:42%;top:2%;bottom:0;transform:translateX(-50%);z-index:2;display:flex;justify-content:center;align-items:flex-end;pointer-events:none}
@@ -64,7 +64,7 @@ h1 em{font-weight:400;color:#9f743d}
 .feature-photo{grid-column:1;grid-row:1;width:100%;height:100%;object-fit:cover;object-position:72% center}
 .feature-copy{grid-column:2;grid-row:1/3;padding:34px 26px;display:flex;flex-direction:column;align-items:flex-start;background:#fffdf9}
 .feature-copy>span{font-size:9px;color:#9b8c79;margin-bottom:20px}
-.feature-copy p{margin:0;color:var(--forest);font:500 17px/1.4 var(--serif)}
+.feature-copy p{margin:0;color:var(--forest);font:500 16px/1.42 var(--sans);letter-spacing:-.025em}
 .feature-copy a{margin-top:auto;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--gold-gradient);color:#2e2a22;text-decoration:none;font-size:18px}
 .feature-seal{grid-column:1;grid-row:2;background:var(--forest);color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
 .feature-seal svg{width:46px;height:46px;padding:9px;border:1px solid rgba(205,165,104,.65);border-radius:50%;fill:none;stroke:var(--gold);stroke-width:1.35}
@@ -75,7 +75,7 @@ h1 em{font-weight:400;color:#9f743d}
 .care-switch__slider{position:absolute;z-index:0;left:5px;top:5px;width:calc(50% - 5px);height:calc(100% - 10px);border-radius:999px;background:var(--forest);box-shadow:0 3px 8px rgba(23,53,38,.12);transform:translateX(0);transition:transform .58s cubic-bezier(.22,1,.36,1),box-shadow .35s ease}
 .care-switch[data-active="1"] .care-switch__slider{transform:translateX(100%)}
 .care-switch__shine{display:none}
-.care-switch button{position:relative;z-index:2;border:0;border-radius:999px;background:transparent;color:#74695e;font-size:14px;cursor:pointer;transition:color .32s ease,transform .28s ease}
+.care-switch button{position:relative;z-index:2;border:0;border-radius:999px;background:transparent;color:#74695e;font-size:12px;cursor:pointer;transition:color .32s ease,transform .28s ease}
 .care-switch button:hover{transform:translateY(-1px)}
 .care-switch button.active{color:white}
 .hero-signature{position:absolute;right:83px;bottom:32px;display:flex;flex-direction:column;color:var(--forest)}
@@ -87,13 +87,13 @@ h1 em{font-weight:400;color:#9f743d}
 .next-section p{font:400 32px var(--serif);opacity:.35}
 
 @media(max-width:1180px){
-  .topbar{grid-template-columns:190px 1fr 180px}.brand{width:155px}.main-nav{gap:22px}.appointment-shortcut{width:142px}
+  .topbar{grid-template-columns:190px 1fr 180px}.brand{width:155px}.main-nav{gap:22px}.appointment-shortcut{width:136px}
   .hero{grid-template-columns:34% 42% 24%}.portrait-stage{left:50%;right:auto;width:42%}.feature-card{width:310px;height:280px;margin-left:-70px}.feature-copy{padding:28px 20px}.feature-copy p{font-size:15px}
   h1{font-size:clamp(50px,5vw,68px)}
 }
 
 @media(max-width:900px){
-  .page-frame{width:100%;margin:0;border:0;border-radius:0}.topbar{height:96px;grid-template-columns:60px 1fr 136px;padding:0 24px}.brand{position:absolute;left:50%;transform:translateX(-50%);width:164px}.main-nav{display:none;position:absolute;top:96px;left:0;right:0;transform:none;background:var(--ivory);padding:22px 28px;flex-direction:column;align-items:flex-start;border-top:1px solid var(--line)}.main-nav.open{display:flex}.main-nav a{font-size:16.8px;padding:6px 0}.menu-toggle{display:flex;grid-column:1;grid-row:1;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;align-items:center;justify-content:center;flex-direction:column;gap:6px}.menu-toggle span:not(.sr-only){width:17px;height:1px;background:currentColor}.top-actions{grid-column:3;grid-row:1;position:relative;z-index:2}.appointment-shortcut{width:132px;height:46px;padding:0 11px;gap:7px}.appointment-shortcut span{font-size:14px}.appointment-shortcut svg{width:19px}
+  .page-frame{width:100%;margin:0;border:0;border-radius:0}.topbar{height:96px;grid-template-columns:60px 1fr 126px;padding:0 24px}.brand{position:absolute;left:50%;transform:translateX(-50%);width:164px}.main-nav{display:none;position:absolute;top:96px;left:0;right:0;transform:none;background:var(--ivory);padding:22px 28px;flex-direction:column;align-items:flex-start;border-top:1px solid var(--line)}.main-nav.open{display:flex}.main-nav a{font-size:16.8px;padding:6px 0}.menu-toggle{display:flex;grid-column:1;grid-row:1;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;align-items:center;justify-content:center;flex-direction:column;gap:6px}.menu-toggle span:not(.sr-only){width:17px;height:1px;background:currentColor}.top-actions{grid-column:3;grid-row:1;position:relative;z-index:2}.appointment-shortcut{width:122px;height:46px;padding:0 11px;gap:7px}.appointment-shortcut span{font-size:12px}.appointment-shortcut svg{width:19px}
   .hero{height:calc(100vh - 96px);min-height:660px;max-height:780px;grid-template-columns:48% 52%;padding:0 24px;background:transparent}
   .hero::before{left:24px}.hero-copy{grid-column:1;padding-left:18px;margin-top:-26px}.eyebrow{font-size:8px;max-width:16ch;line-height:1.5}h1{font-size:clamp(43px,7.8vw,64px)}
   .portrait-stage{left:48%;right:-10%;width:auto;top:7%;transform:none}.portrait-stage img{height:93%;object-position:center bottom}.feature-card{display:none}.care-switch{left:72%;bottom:28px;min-width:190px}.hero-signature,.expand-link{display:none}
@@ -101,8 +101,8 @@ h1 em{font-weight:400;color:#9f743d}
 
 @media(max-width:560px){
   .topbar{height:88px;padding:0 18px}.brand{width:145px}.main-nav{top:88px}
-  .hero{height:calc(100svh - 88px);min-height:610px;padding:0 18px;grid-template-columns:54% 46%}.hero-copy{padding-left:2px;margin-top:-70px}.hero::before{display:none}.eyebrow{font-size:8px;margin-bottom:14px}h1{font-size:clamp(39px,11.5vw,57px);line-height:.92;margin-bottom:25px}.outline-button{min-width:168px;height:44px;padding:0 14px;font-size:14px}
-  .top-actions{position:absolute;right:14px;top:20px;height:48px}.appointment-shortcut{width:132px;border-radius:999px}.appointment-shortcut span{font-size:14px}.portrait-stage{left:50%;right:-24%;top:13%}.portrait-stage img{height:90%;object-position:center bottom;transform:translateX(-18%)}.portrait-halo{width:100%;top:19%;transform:translateX(-12%)}.care-switch{left:72%;bottom:20px;min-width:210px;height:46px}.care-switch button{font-size:14px}
+  .hero{height:calc(100svh - 88px);min-height:610px;padding:0 18px;grid-template-columns:54% 46%}.hero-copy{padding-left:2px;margin-top:-70px}.hero::before{display:none}.eyebrow{font-size:8px;margin-bottom:14px}h1{font-size:clamp(37px,10.8vw,54px);line-height:.92;margin-bottom:25px}.outline-button{min-width:154px;height:42px;padding:0 14px;font-size:12px}
+  .top-actions{position:absolute;right:14px;top:20px;height:48px}.appointment-shortcut{width:122px;border-radius:999px}.appointment-shortcut span{font-size:12px}.portrait-stage{left:50%;right:-24%;top:13%}.portrait-stage img{height:90%;object-position:center bottom;transform:translateX(-18%)}.portrait-halo{width:100%;top:19%;transform:translateX(-12%)}.care-switch{left:72%;bottom:20px;min-width:196px;height:46px}.care-switch button{font-size:12px}
 }
 
 @media(prefers-reduced-motion:no-preference){.main-nav,.outline-button,.feature-copy a{transition:all .2s ease}}
