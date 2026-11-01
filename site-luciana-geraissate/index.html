@@ -15,10 +15,6 @@
   <div class="page-frame">
     <header class="topbar">
       <div class="menu-group">
-        <a class="brand" href="#inicio" aria-label="Luciana Geraissate, início">
-          <img src="assets/logo-marrom.png" alt="Luciana Geraissate — Fisioterapia e Pilates" width="1974" height="797">
-        </a>
-
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
           <span></span><span></span>
           <span class="sr-only">Abrir menu</span>
@@ -43,9 +39,17 @@
     <main id="conteudo">
       <section class="hero" id="inicio" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Fisioterapia e Pilates</p>
+          <a class="hero-brand" href="#inicio" aria-label="Luciana Geraissate, início">
+            <img src="assets/logo-marrom.png" alt="Luciana Geraissate — Fisioterapia e Pilates" width="1974" height="797">
+          </a>
           <h1 id="hero-title">Cuidado que<br>devolve<br><em>movimento.</em></h1>
           <a class="outline-button" href="#contato">Conheça a clínica</a>
+          <div class="hero-stats" aria-label="Etapas do cuidado">
+            <div><strong>01</strong><span>Avaliação cuidadosa</span></div>
+            <div><strong>02</strong><span>Plano individual</span></div>
+            <div><strong>03</strong><span>Acompanhamento</span></div>
+            <div><strong>04</strong><span>Movimento contínuo</span></div>
+          </div>
         </div>
 
         <div class="portrait-stage" aria-hidden="true">
@@ -71,11 +75,6 @@
           <span class="care-switch__shine" aria-hidden="true"></span>
           <button class="active" type="button" aria-pressed="true">Individual</button>
           <button type="button" aria-pressed="false">Pilates</button>
-        </div>
-
-        <div class="hero-signature">
-          <span>Fisioterapia</span>
-          <small>Presença em cada etapa</small>
         </div>
 
         <a class="expand-link" href="#clinica" aria-label="Explorar a página">
