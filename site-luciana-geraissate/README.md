@@ -1,6 +1,6 @@
 # Site Luciana Geraissate
 
-Primeira etapa da nova construção: header e hero inspirados na referência fornecida, adaptados para a identidade da Clínica Luciana Geraissate.
+Landing page responsiva da Clínica Luciana Geraissate, construída a partir do sistema visual do hero.
 
 ## Prévia
 
@@ -12,9 +12,9 @@ Abra `http://localhost:4173/site-luciana-geraissate/`.
 
 ## Arquivos
 
-- `index.html`: estrutura do header e hero.
-- `styles.css`: composição, identidade e responsividade.
-- `script.js`: menu móvel e seletor de modalidades.
+- `index.html`: estrutura completa da página e conteúdo das seções.
+- `styles.css`: tokens, componentes, composição e responsividade.
+- `script.js`: menu móvel, acordeão de perguntas e entrada suave das seções.
 - `assets/luciana-cutout.png`: recorte transparente criado a partir da fotografia oficial para o hero.
 
-A página permanece com `noindex` durante a construção. As copys são provisórias e serão revisadas na próxima etapa.
+A página permanece com `noindex` durante a construção. Depoimentos, endereço, horários e contato devem ser substituídos pelos dados aprovados antes da publicação.
