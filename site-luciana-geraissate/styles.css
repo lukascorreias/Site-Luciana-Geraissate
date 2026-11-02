@@ -117,9 +117,9 @@ h1 em{font-family:var(--serif);font-size:1.08em;font-weight:400;font-style:itali
   .appointment-shortcut span{font-size:11px}
   .appointment-shortcut svg{width:17px}
   .hero{height:calc(100svh - 82px);min-height:650px;max-height:760px;padding:0 16px;grid-template-columns:minmax(0,56%) minmax(0,44%)}
-  .hero-copy{width:100%;max-width:218px;padding-left:0;margin-top:-18px}
-  .hero-brand{width:144px;margin-bottom:10px}
-  h1{font-size:clamp(33px,9.6vw,40px);line-height:.92;margin-bottom:18px}
+  .hero-copy{width:min(310px,calc(100vw - 32px));max-width:310px;padding-left:0;margin-top:-42px}
+  .hero-brand{width:180px;margin-bottom:10px}
+  h1{font-size:clamp(41.25px,12vw,50px);line-height:.92;margin-bottom:18px}
   h1 em{font-size:1em}
   .outline-button{min-width:140px;height:40px;padding:0 12px;font-size:12px}
   .hero-stats{max-width:218px;margin-top:24px;padding:10px 7px;grid-template-columns:48px repeat(2,minmax(0,1fr));gap:7px;border-radius:18px}
@@ -128,7 +128,7 @@ h1 em{font-family:var(--serif);font-size:1.08em;font-weight:400;font-style:itali
   .hero-stats span{font-size:7px}
   .stats-icons li{width:25px;height:25px;margin-left:-9px}
   .stats-icons svg{width:12px;height:12px}
-  .portrait-stage{left:auto;right:-8%;width:58%;height:auto;aspect-ratio:2/3;top:auto;bottom:0;transform:none}
+  .portrait-stage{left:auto;right:-12%;width:70%;height:auto;aspect-ratio:2/3;top:auto;bottom:0;transform:none}
   .portrait-stage img{width:100%;height:auto;object-fit:contain;object-position:right bottom;transform:none}
   .portrait-halo{width:96%;height:62%;top:24%;right:0;transform:rotate(-6deg)}
 }
