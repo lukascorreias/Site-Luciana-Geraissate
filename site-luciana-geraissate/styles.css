@@ -117,7 +117,7 @@ h1 em{font-family:var(--serif);font-size:1.08em;font-weight:400;font-style:itali
   .appointment-shortcut span{font-size:11px}
   .appointment-shortcut svg{width:17px}
   .hero{height:calc(100svh - 82px);min-height:650px;max-height:760px;padding:0 16px;grid-template-columns:minmax(0,56%) minmax(0,44%)}
-  .hero-copy{width:min(310px,calc(100vw - 32px));max-width:310px;padding-left:0;margin-top:-42px}
+  .hero-copy{width:min(310px,calc(100vw - 32px));max-width:310px;padding-left:0;margin-top:-42px;transform:translateY(-90px)}
   .hero-brand{width:180px;margin-bottom:10px}
   h1{font-size:clamp(41.25px,12vw,50px);line-height:.92;margin-bottom:18px}
   h1 em{font-size:1em}
