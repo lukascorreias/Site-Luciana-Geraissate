@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1974" height="797" viewBox="0 0 1974 797" role="img" aria-labelledby="title">
+  <title id="title">Luciana Geraissate — Fisioterapia e Pilates</title>
+  <defs>
+    <linearGradient id="brown" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3e271d"/>
+      <stop offset="0.3" stop-color="#6a4230"/>
+      <stop offset="0.52" stop-color="#ad7951"/>
+      <stop offset="0.74" stop-color="#5b3829"/>
+      <stop offset="1" stop-color="#8b5b3d"/>
+    </linearGradient>
+    <mask id="logo-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1974" height="797" style="mask-type:alpha">
+      <image href="logo-dourada.png" x="0" y="0" width="1974" height="797"/>
+    </mask>
+  </defs>
+  <rect width="1974" height="797" fill="url(#brown)" mask="url(#logo-mask)"/>
+</svg>
