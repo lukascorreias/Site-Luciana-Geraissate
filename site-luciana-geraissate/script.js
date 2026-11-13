@@ -166,21 +166,32 @@ document.querySelectorAll('[data-pain-carousel]').forEach((carousel) => {
   let current = 0, phase = 0, step = 0, sideWidth = 0, centerWidth = 0, frame;
   let drag = null, suppressClick = false;
   let centerHeight = 330;
+  const sideHeight = parseFloat(getComputedStyle(carousel).getPropertyValue('--pain-side-height')) || 270;
+  const transitionDuration = parseFloat(getComputedStyle(carousel).getPropertyValue('--pain-motion-duration')) || 640;
+  const arcDepth = parseFloat(getComputedStyle(carousel).getPropertyValue('--pain-arc-depth')) || 21;
+  const tilt = parseFloat(getComputedStyle(carousel).getPropertyValue('--pain-tilt')) || 7;
+  const bend = parseFloat(getComputedStyle(carousel).getPropertyValue('--pain-bend')) || 1.25;
+  const recede = parseFloat(getComputedStyle(carousel).getPropertyValue('--pain-recede')) || 45;
+  let curved = false;
   const wrap = (n) => (n % cards.length + cards.length) % cards.length;
   const slotFor = (i, position) => wrap(position - i + cards.length / 2) - cards.length / 2;
   const draw = (position) => {
     cards.forEach((card, i) => {
       const slot = slotFor(i, position);
       const distance = Math.abs(slot);
+      const expansion = 1 - Math.min(distance, 1);
+      card.style.width = `${sideWidth + (centerWidth - sideWidth) * expansion}px`;
+      card.style.height = `${sideHeight + (centerHeight - sideHeight) * expansion}px`;
       const x = slot * step + Math.sign(slot) * Math.min(distance, 1) * (centerWidth - sideWidth) / 2;
-      card.style.transform = `translateX(-50%) translate(${x}px, ${distance * distance * 12}px)`;
+      const arc = Math.min(distance, 2.5);
+      const y = curved ? arc * arc * arcDepth : distance * distance * 12;
+      const z = curved ? -arc * recede : 0;
+      const turn = curved ? -Math.sign(slot) * Math.min(arc, 2) * tilt : 0;
+      const roll = curved ? Math.sign(slot) * Math.min(arc, 2) * bend : 0;
+      card.style.transform = `translateX(-50%) translate3d(${x}px, ${y}px, ${z}px) rotateY(${turn}deg) rotateZ(${roll}deg)`;
       card.style.visibility = distance > 2.55 ? 'hidden' : 'visible';
-      card.style.zIndex = String(10 - Math.round(distance));
+      card.style.zIndex = String(i === current ? 20 : 10 - Math.round(distance));
     });
-  };
-  // Keep each card’s text layout fixed throughout the movement.
-  const sizeCards = () => {
-    cards.forEach((card, i) => { card.style.width = `${i === current ? centerWidth : sideWidth}px`; });
   };
   const measureHeight = () => {
     track.style.setProperty('--pain-height', `${Math.max(330, centerHeight) + 100}px`);
@@ -235,7 +246,6 @@ document.querySelectorAll('[data-pain-carousel]').forEach((carousel) => {
     current = target;
     if (manual) hasInteracted = true;
     sync();
-    sizeCards();
     if (manual) announcement.textContent = `${current + 1} de 6: ${tabs[current].textContent}`;
     if (motion.matches || Math.abs(distance) < .001) {
       phase = current; draw(phase); measureHeight(); return;
@@ -244,7 +254,7 @@ document.querySelectorAll('[data-pain-carousel]').forEach((carousel) => {
     measureHeight();
     const started = performance.now();
     const tick = (now) => {
-      const progress = Math.min((now - started) / 480, 1);
+      const progress = Math.min((now - started) / transitionDuration, 1);
       const eased = progress * progress * (3 - 2 * progress);
       phase = start + (end - start) * eased;
       draw(phase);
@@ -256,6 +266,7 @@ document.querySelectorAll('[data-pain-carousel]').forEach((carousel) => {
   const resize = () => {
     cancelAnimationFrame(frame);
     const available = track.clientWidth;
+    curved = available > 1100;
     if (available > 1100) {
       // Center + three side widths + four gaps: outer card centers meet viewport edges.
       sideWidth = (available - 80) / 4.6;
@@ -267,7 +278,6 @@ document.querySelectorAll('[data-pain-carousel]').forEach((carousel) => {
       step = available <= 760 ? available : centerWidth - 24;
     }
     phase = current;
-    sizeCards();
     measureExpandedCards();
     draw(phase); ensureTabVisible();
   };
@@ -370,5 +380,23 @@ const floatingWhatsapp = document.querySelector('.mobile-whatsapp');
 const footer = document.querySelector('.site-footer');
 if (floatingWhatsapp && footer && 'IntersectionObserver' in window) {
   new IntersectionObserver(([entry]) => { floatingWhatsapp.hidden = entry.isIntersecting; }, {rootMargin:'0px 0px 24px 0px'}).observe(footer);
+}
+
+// Preserve the full gold headline on one line at every viewport width.
+const heroGoldLine = document.querySelector('#hero-title .hero-title-serif');
+if (heroGoldLine) {
+  const heroGoldText = heroGoldLine.querySelector('span');
+  const fitHeroGoldLine = () => {
+    heroGoldLine.style.fontSize = '';
+    const available = heroGoldLine.clientWidth;
+    const natural = heroGoldText.getBoundingClientRect().width;
+    if (available && natural > available) {
+      const size = parseFloat(getComputedStyle(heroGoldLine).fontSize);
+      heroGoldLine.style.fontSize = `${size * available / natural * .97}px`;
+    }
+  };
+  requestAnimationFrame(fitHeroGoldLine);
+  window.addEventListener('resize', fitHeroGoldLine, {passive: true});
+  document.fonts?.ready.then(fitHeroGoldLine);
 }
 
